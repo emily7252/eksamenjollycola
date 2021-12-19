@@ -1,0 +1,887 @@
+/**
+ * fil: css/style.css
+ **/
+/* Reset: Meyer Style */
+/* fjerner default browser styles */
+@import 'reset.css';
+/* Font hentet fra Adobe Fonts */
+@import url("https://use.typekit.net/bbb7jzj.css");
+
+/* Farve- og fontvariabler */
+:root {
+  /* farver */
+  --white1: #fcfaf6;
+  --grey: #716c69;
+  --white2: #dedecc;
+  --white3: #ae9e79;
+  --groen: #99a812;
+  --red2: #9b2626;
+  --background: #fcfaf6;
+  --brown: #827363;
+  /* fonte */
+  --overskrift: 'omnes-semicond', sans-serif;
+  --broedtekst: 'omnes-semicond', sans-serif;
+}
+
+#wrap {}
+
+body {
+  margin: 0;
+  font-family: var(--broedtekst);
+  background: var(--background);
+}
+
+/* Navigation*/
+header {
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* Her styles på polka prikker i header */
+#polka {
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* Her styles på logoet */
+.logo img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Her fjernes checkbox, så den er usynlig */
+.nav-toggle {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/* Her fastsættes placering af burgermenu */
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Her styles burgermenuen med bl.a højde og farve */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+/* Her fastsættes starten på burgermenuen og 2 ekstra streger tilføjes for en komplet brugermenu */
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+/* Her rykkes positionen af den øverste streg på burgermenuen */
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+/* Her rykkes positionen af den nederste streg på burgermenuen */
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+/* Her styles navigationen/menubar*/
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  /* Annimation skaber et flot flow, når man åbner dropdown menuen*/
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+/* Her skiftes farven, når man kører musen over et menupunkt */
+nav a:hover {
+  color: var(--red2);
+}
+
+/* Her gøres dropdown menuen klikbar */
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
+}
+
+/* Her gøres menuenpunkterne i dropdown meunen synlige og klikbare */
+.nav-toggle:checked~nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* DENNE SEKTION ER TIL FORSIDEN */
+.konkurrencebilledelille1 {
+  width: 100%;
+  height: auto;
+}
+
+.konkurrencebilledestor1 {
+  width: 100%;
+  height: auto;
+}
+
+.knapmobil {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Her styles på min tekstbox i mobil/ipad version */
+.smagtekst1 {
+  text-align: center;
+  background-color: #a58672;
+  border: 3px solid #4d3937;
+  margin: 20px;
+  color: var(--white1);
+}
+
+.smagtekst1 h2 {
+  font-size: 25px;
+  font-weight: 500;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  font-style: italic;
+}
+
+.smagtekst1 p {
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 500;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Her styles på mine kolonner i mobil/ipad version */
+.rowforside {
+  text-align: center;
+}
+
+.forsidetekst h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 20px;
+}
+
+.forsidetekst p {
+  line-height: 2.5;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.knapforside {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.julebil {
+  border: 1px solid grey;
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  margin-bottom: 20px;
+}
+
+/* UNDERSIDE KONKURRENCE */
+.overskriftkonk h1 {
+  font-size: 45px;
+  color: #9b2626;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.overskriftkonk h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.rowkon {
+  text-align: center;
+}
+
+.rowkon h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.rowkon p {
+  line-height: 2;
+  font-weight: 500;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 30px;
+}
+
+.rowkon img {
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid grey;
+}
+
+/* UNDERSIDE OM JOLLY COLA */
+/* Her styles på mine kolonner i mobil/ipad version */
+.forsidebilledeom {
+  width: 100%;
+  height: auto;
+}
+
+.rowom {
+  text-align: center;
+}
+
+.rowom h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
+
+.rowom p {
+  line-height: 1.8;
+  font-weight: 500;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 30px;
+}
+
+.rowom img {
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid grey;
+}
+
+/* UNDERSIDE PRODUKTER */
+.produktoverskrift {
+  text-align: center;
+}
+
+.produktoverskrift h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+/* her styles på teksten under overskriften */
+.produktoverskrift h2 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.produktrow h3 {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+/* Her styles på teksten under billederne af produkterne */
+.produktcolumn h3 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Er med til at sætte mine produkter i kolonner */
+* {
+  box-sizing: border-box;
+}
+
+/* Her former jeg måde produkterne skal stå på, ved at sætte dem i kolonner og style på dem. */
+.produktcolumn {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 30px
+}
+
+/* Clear floats after the columns */
+.produktrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Her styles på knappen og teksten til vestfyensbryggeri */
+.knaptilvest1 {
+  text-align: center;
+}
+
+.knaptilvest1 h2 {
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 20px;
+}
+
+.vestknap {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+/* Styler på skrifter over mit map */
+.maptekst {
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.maptekst p {
+  font-size: 40px;
+}
+
+.map1 {
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+/* UNDERSIDE KONTAKT */
+/* Her styles på kontakt boxen */
+.kontakt {
+  margin-top: 30px;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Her styles på diverse elementer i boxen */
+.kontakt h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.kontakt h2 {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.kontakt h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.kontakt p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* footer */
+.logofooter {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  padding-left: 50px;
+}
+
+/* Footer laves til at gå helt ud til kanten */
+.container, .container ul, .footer-col, .footer-col h4::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Her laves størrelsen af indholdet af footer */
+.container {
+  max-width: 1920px;
+  margin-bottom: auto;
+}
+
+/* Her flexes mine underpunkter op på linje */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* her fjernes liststyle */
+.footer ul {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* Her angives farven på min footer og tilføjes en smule padding */
+.footer {
+  background-color: #716c69;
+  padding: 70px 0;
+}
+
+/* Her skabes størrelsen af mine forskellige kolonner, så de står fint ved siden af hinanden */
+.footer-col {
+  width: 25%;
+  padding: 0 20px;
+}
+
+/* Her styles på min h1 */
+.footer-col h1 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Her laves stregerne under mine kolonner og de styles */
+.footer-col h1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #ae9e79;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+/* Her skabes mellemrum mellem de forskellige linjer i kolonnerne */
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* Her styles på linjerne i kolonnerne */
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--white1);
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* Her laves det udhak ordene gør, når man holder musen over dem  */
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.copyright {
+  color: var(--white1);
+  margin-bottom: 0;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* MOBILE FIRST
+/* IPHONE */
+@media only screen and (max-width: 440px) {
+
+  /* FORSIDE */
+  /* Her fjernes forsidebilledet til stor skærm */
+  .konkurrencebilledestor {
+    display: none;
+  }
+
+  .footer-col {
+    width: 60%;
+    margin-bottom: 30px;
+    padding-left: 40px;
+  }
+}
+
+/* 2. Tablet Ipad */
+@media only screen and (max-width: 779px) {
+
+  /* FORSIDE */
+  /* Her fjernes forsidebilledet til stor skærm */
+  .konkurrencebilledestor {
+    display: none;
+  }
+
+  /* UNDERSIDE PRODUKTER  */
+  .produktcolumn {
+    width: 100%;
+  }
+}
+
+/* 3. Stor skærm web */
+@media only screen and (min-width: 780px) {
+
+  /* Her fjernes burgermenu */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    float: left;
+    padding-left: 180px;
+  }
+
+  nav {
+    all: unset;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+  }
+
+  nav ul {
+    display: flex;
+    padding-right: 6rem;
+  }
+
+  nav li {
+    margin-left: 7em;
+    padding-bottom: 35px;
+    padding-top: 60px;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+    font-size: 20px;
+    font-style: normal;
+  }
+
+  /* FORSIDE */
+  /* Her fjernes det billedet til mobil/tablet version */
+  .konkurrencebilledelille {
+    display: none;
+  }
+
+  /* Her fjernes "klik her" knappen til mobil/ipad version */
+  .knapmobil {
+    display: none;
+  }
+
+  /* her styles på citat boksen */
+  .smagtekst1 {
+    text-align: center;
+    background-color: #a58672;
+    border: 3px solid #4d3937;
+    margin-left: 115px;
+    margin-right: 160px;
+    color: var(--white1);
+  }
+
+  .smagtekst1 h2 {
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    font-style: italic;
+  }
+
+  .smagtekst1 p {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 500;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-bottom: 30px;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .forsidetekst h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .forsidetekst p {
+    font-size: 26px;
+    line-height: 1.8;
+    font-weight: 500;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-bottom: 20px;
+  }
+
+  .knapforside {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .julebil {
+    border: 1px solid grey;
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Her styles mine kolonner på forsiden */
+  .rowforside {
+    display: flex;
+    gap: 2.3rem;
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  #forsidebilledebox img {
+    margin-top: 40px;
+    width: 700px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 35px;
+  }
+
+  .rowforside p {
+    padding-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* UNDERSIDE KONKURRENCE */
+  /* Her styles mine kolonner på siden Om konkurrence */
+  .overskriftkonk h1 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .rowkon {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    font-size: 20px;
+    margin-bottom: 100px;
+    margin-top: 30px;
+  }
+
+  .box1 {
+    margin-left: 20px;
+    margin-right: 60px;
+  }
+
+  .pynt img {
+    width: 400px;
+    height: 400px;
+    margin-right: 70px;
+  }
+
+  .box2 {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+  .pynt1 img {
+    width: 300px;
+    height: 400px;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+
+  .pynt2 img {
+    width: 300px;
+    height: 400px;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+
+  /* UNDERSIDE JOLLY COLA */
+  /* Her styles mine kolonner på siden Om Jolly Cola */
+  .rowom {
+    display: flex;
+    gap: 2.3rem;
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+  }
+
+  #historie img {
+    margin-top: 40px;
+    width: 700px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 35px;
+    border: 1px solid grey;
+  }
+
+  #historie1 img {
+    margin-top: 40px;
+    width: 700px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 35px;
+    border: 1px solid grey;
+  }
+
+  #historie2 img {
+    margin-top: 40px;
+    width: 700px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 35px;
+    border: 1px solid grey;
+  }
+
+  .historie {
+    margin-left: 150px;
+  }
+
+  .rowom h2 {
+    font-size: 35px;
+  }
+
+  .rowom p {
+    font-size: 20px;
+    line-height: 2;
+    padding-top: 5px;
+  }
+
+  /* UNDERSIDE KONKURRENCE */
+  /* Her fjernes forsidebilledet til stor skærm */
+  .konkurrencebilledelille {
+    display: none;
+  }
+
+  /* UNDERSIDE PRODUKTER */
+  .produktoverskrift h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 20px;
+  }
+
+  .produktoverskrift h2 {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-right: 400px;
+    margin-left: 400px;
+    line-height: 1.8;
+  }
+
+  /* UNDERSIDE KONTAKT */
+  .kontakt {
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+
+  /* Her styles på diverse elementer i boxen */
+  .kontakt h1 {
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .kontakt h2 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 2;
+  }
+
+  .kontakt h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  .kontakt p {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
