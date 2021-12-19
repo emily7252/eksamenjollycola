@@ -10,6 +10,7 @@ Emily Thorup Knudsen
 hold E 
 
 Vejledere: 
+
 Hanne Skjærlund Andersen
 
 Heidi Lisbeth Larho
